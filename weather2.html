@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //0a892a0445d3a24086cd5fa02dec86ac
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=Houston&APPID=0a892a0445d3a24086cd5fa02dec86ac`
+    fetch(url)
+    .then((response)=>{
+        return response.json();
+    })
+    .then((weatherObj)=>{
+        console.log(weatherObj.main.temp);
+        let cel = weatherObj.main.temp - 273.15;
+        console.log(cel)
+        let degCRound = Math.floor(cel);
+        let degF = degCRound* 1.8 + 32;
+        console.log(degF);
+        let degFRound = Math.floor(degF);
+        console.log(degFRound);
+        //to show the user the result
+        let body = document.querySelector('body')
+        body.innerHTML = degFRound.toString(); 
+    })
+    </script>
+</body>
+</html>
