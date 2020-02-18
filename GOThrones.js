@@ -9,7 +9,7 @@ for (i = 0; i < characters.length; i++) {
     let body = document.getElementsByTagName("ul")
     var names = document.createElement("li");
     names.innerHTML = characters[i].name
-    body[0].appendChild(names);
+    body[0].appendChild(names); //since its being added (appended) stuff isnt erased
 
 
 }
